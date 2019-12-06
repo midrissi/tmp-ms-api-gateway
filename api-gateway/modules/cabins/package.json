@@ -1,0 +1,22 @@
+{
+  "name": "cabins",
+  "version": "0.1.0",
+  "license": "ISC",
+  "description": "The cabins module",
+  "keywords": [
+    "cabins",
+    "boilerplate-fm",
+    "functional-module"
+  ],
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/izmjs/cabins.git"
+  },
+  "dependencies": {
+    "@nestjs/common": "^6.10.7",
+    "@nestjs/core": "^6.10.7",
+    "@nestjs/microservices": "^6.10.7",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.3"
+  }
+}
