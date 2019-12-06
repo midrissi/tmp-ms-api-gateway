@@ -1,0 +1,23 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "A simple MS client",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/midrissi/tmp-ms-api-gateway.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nestjs/common": "^6.10.7",
+    "@nestjs/core": "^6.10.7",
+    "@nestjs/microservices": "^6.10.7",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.3"
+  }
+}

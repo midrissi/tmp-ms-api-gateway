@@ -1,21 +1,19 @@
 import { Module } from '@nestjs/common';
 import { CabinsCtrl } from './cabins.controller';
-import { AppCtrl } from './app.controller';
-import { ClientsModule, ClientProxyFactory, Transport } from '@nestjs/microservices';
+import { MongooseModule } from '@nestjs/mongoose';
+import { ClientsModule } from '@nestjs/microservices';
+import { CabineSchema } from './schemas/cabin.schema';
 
 @Module({
-  imports: [ClientsModule],
-  controllers: [CabinsCtrl, AppCtrl],
-  providers: [{
-    provide: 'MATH_SERVICE',
-    useFactory: () => {
-      return ClientProxyFactory.create({
-        transport: Transport.TCP,
-        options: {
-          port: 5000,
-        }
-      });
-    }
-  }]
+  imports: [
+    ClientsModule,
+    MongooseModule.forRoot('mongodb://localhost/cabine-db'),
+    MongooseModule.forFeature([{
+      name: 'Cabine',
+      schema: CabineSchema,
+      collection: 'cabines',
+    }]),
+  ],
+  controllers: [CabinsCtrl],
 })
 export class AppModule {}
