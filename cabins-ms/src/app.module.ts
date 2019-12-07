@@ -7,7 +7,10 @@ import { CabineSchema } from './schemas/cabin.schema';
 @Module({
   imports: [
     ClientsModule,
-    MongooseModule.forRoot('mongodb://localhost/cabine-db'),
+    MongooseModule.forRoot('mongodb://localhost/cabine-db', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }),
     MongooseModule.forFeature([{
       name: 'Cabine',
       schema: CabineSchema,

@@ -11,5 +11,28 @@
     "schema": {
       "type": "number"
     }
+  },
+  "MS_REDIS_URL": {
+    "name": "Redis Url",
+    "defaultValue": "redis://localhost:6379",
+    "scope": "cabins"
+  },
+  "MS_RMQ_URL": {
+    "name": "RMQ Url",
+    "defaultValue": "amqp://localhost:5672",
+    "scope": "cabins"
+  },
+  "MS_RMQ_QUEUE": {
+    "name": "RMQ Queue",
+    "defaultValue": "cabins_queue",
+    "scope": "cabins"
+  },
+  "MS_RMQ_QUEUE_DURABLE": {
+    "name": "RMQ Queue durable?",
+    "defaultValue": false,
+    "scope": "cabins",
+    "schema": {
+      "type": "boolean"
+    }
   }
 }

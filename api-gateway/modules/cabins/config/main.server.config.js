@@ -1,10 +1,10 @@
-const { ClientProxyFactory, Transport } = require('@nestjs/microservices');
+const { ClientProxyFactory } = require('@nestjs/microservices');
 
 module.exports = (app, db, config) => {
-  const { ms: options } = config.cabins;
+  const { transport, options } = config.cabins.ms;
   const cabins = ClientProxyFactory.create({
     options,
-    transport: Transport.TCP,
+    transport,
   });
 
   app.use(async (req, res, next) => {
