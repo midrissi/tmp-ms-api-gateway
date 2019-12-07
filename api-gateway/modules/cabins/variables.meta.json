@@ -1,11 +1,20 @@
 {
-  "MS_HOST": {
-    "name": "Hostname",
+  "MS_TRANSPORT": {
+    "name": "Trasport",
+    "scope": "cabins",
+    "defaultValue": "TCP",
+    "schema": {
+      "type": "string",
+      "enum": ["TCP", "REDIS", "RMQ"]
+    }
+  },
+  "MS_TCP_HOST": {
+    "name": "TCP Hostname",
     "defaultValue": "localhost",
     "scope": "cabins"
   },
-  "MS_PORT": {
-    "name": "Port",
+  "MS_TCP_PORT": {
+    "name": "TCP Port",
     "defaultValue": 5000,
     "scope": "cabins",
     "schema": {
