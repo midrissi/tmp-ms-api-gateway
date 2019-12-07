@@ -1,11 +1,11 @@
 {
   "MS_TRANSPORT": {
-    "name": "Trasport",
+    "name": "Transport",
     "scope": "cabins",
     "defaultValue": "TCP",
     "schema": {
       "type": "string",
-      "enum": ["TCP", "REDIS", "RMQ"]
+      "enum": ["TCP", "REDIS", "RMQ", "GRPC"]
     }
   },
   "MS_TCP_HOST": {
@@ -43,5 +43,15 @@
     "schema": {
       "type": "boolean"
     }
+  },
+  "MS_GRPC_URL": {
+    "name": "gRPC Url",
+    "defaultValue": "localhost:5000",
+    "scope": "cabins"
+  },
+  "MS_GRPC_PACKAGE": {
+    "name": "Package",
+    "defaultValue": "cabin",
+    "scope": "cabins"
   }
 }

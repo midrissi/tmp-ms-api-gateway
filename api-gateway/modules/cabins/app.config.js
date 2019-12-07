@@ -1,9 +1,17 @@
-const { Transport } = require('@nestjs/microservices');
+const {
+  Transport,
+} = require('@nestjs/microservices');
+
+const {
+  join,
+} = require('path');
 
 const SCOPE = 'cabins';
 
 module.exports = (config) => {
-  const { env } = config.utils;
+  const {
+    env,
+  } = config.utils;
   const t = env.get('MS_TRANSPORT', SCOPE);
   let transport;
   let options;
@@ -26,6 +34,14 @@ module.exports = (config) => {
         url: env.get('MS_REDIS_URL', SCOPE),
       };
       break;
+    case 'GRPC':
+      transport = Transport.GRPC;
+      options = {
+        url: env.get('MS_GRPC_URL', SCOPE),
+        package: env.get('MS_GRPC_PACKAGE', SCOPE),
+        protoPath: join(__dirname, 'protos/cabins/cabin.proto'),
+      };
+      break;
     case 'TCP':
     default:
       transport = Transport.TCP;
@@ -38,7 +54,10 @@ module.exports = (config) => {
 
   return {
     cabins: {
-      ms: { transport, options },
+      ms: {
+        transport,
+        options,
+      },
     },
   };
 };

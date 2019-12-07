@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+import "google/protobuf/struct.proto";
+
+package cabin;
+
+service CabinService {
+  rpc GetById (CabinById) returns (Cabin) {}
+  rpc Create (Cabin) returns (Cabin) {}
+  rpc List (CabinQuery) returns (Cabins) {}
+}
+
+message CabinById {
+  string id = 1;
+}
+
+message CabinQuery {
+  int32 skip = 1;
+  int32 top = 2;
+}
+
+message Cabins {
+  repeated Cabin value = 1;
+}
+
+message Cabin {
+  string id = 1;
+  string name = 2;
+  int32 number = 3;
+}

@@ -1,7 +1,6 @@
 export interface ICabinQueryOpts {
-  $skip?: number;
-  $top?: number;
-  $filter?: any;
+  skip?: number;
+  top?: number;
 }
 
 export interface ICabine {

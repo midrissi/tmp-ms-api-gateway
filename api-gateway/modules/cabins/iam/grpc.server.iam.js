@@ -1,10 +1,10 @@
-const ctrls = require('../controllers/main.server.controller');
+const ctrls = require('../controllers/grpc.server.controller');
 
 /**
 * @type { IAM.default }
 */
 module.exports = {
-  prefix: '/cabins',
+  prefix: '/cabins/grpc',
   routes: [{
     path: '/',
     methods: {
@@ -21,9 +21,9 @@ module.exports = {
        * }]
        */
       get: {
-        iam: 'modules:cabins:main:list',
+        iam: 'modules:cabins:grpc:list',
         title: 'List all cabins',
-        parents: ['modules:cabins', 'modules:cabins:main'],
+        parents: ['modules:cabins', 'modules:cabins:grpc'],
         groups: [],
         description: 'List all cabins',
         middlewares: [
@@ -38,10 +38,10 @@ module.exports = {
        * }
        */
       post: {
-        iam: 'modules:cabins:main:create',
+        iam: 'modules:cabins:grpc:create',
         title: 'Create new cabine',
         groups: [],
-        parents: ['modules:cabins', 'modules:cabins:main'],
+        parents: ['modules:cabins', 'modules:cabins:grpc'],
         description: 'Create a new cabin',
         middlewares: [
           ctrls.create,
