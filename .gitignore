@@ -1,0 +1,14 @@
+# dependencies
+node_modules
+
+# misc
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-error.log
+yarn.lock
+
+# Git files
+*.orig
+!.gitkeep
