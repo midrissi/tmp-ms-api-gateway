@@ -8,6 +8,7 @@ exports.list = async function list(req, res) {
   const { cabins } = req.clients;
   const { $skip = 0, $top = 10 } = req.query;
   const data = await cabins.send('cabins:list', {
+    user: req.user? req.user.toJSON({ virtuals: true }): {},
     $skip: Number.isNaN($skip) ? 0 : parseInt($skip, 10),
     $top: Number.isNaN($skip) ? 10 : parseInt($top, 10),
   }).toPromise();

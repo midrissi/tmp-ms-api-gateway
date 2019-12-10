@@ -20,6 +20,7 @@ const guest = [
  * @type {Array}
  */
 const user = [
+  'modules:cabins',
   'users:auth:name',
   'users:auth:signin',
 

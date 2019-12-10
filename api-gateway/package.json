@@ -10,7 +10,7 @@
     "test:watch": "nodemon --watch modules/**/*.js --exec \"npm test\"",
     "format:write": "prettier --write **/*.{json,md} !package.json",
     "format:test": "prettier **/*.{json,md} --list-different",
-    "start": "nodemon --inspect .",
+    "start": "nodemon .",
     "stop": "pm2 stop app",
     "restart": "pm2 restart app",
     "lint": "eslint .",
