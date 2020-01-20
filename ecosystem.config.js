@@ -5,7 +5,7 @@ module.exports = {
     name: 'ms',
     script: 'npm run start:dev',
     cwd: join(__dirname, 'cabins-ms'),
-    instances: 1,
+    instances: 3,
     increment_var : 'PORT',
     env: {
       PORT: 5000,

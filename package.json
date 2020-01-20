@@ -5,7 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "pm2 start ecosystem.config.js",
-    "restart": "pm2 restart all"
+    "restart:one": "pm2 restart",
+    "restart": "pm2 restart all",
+    "stop": "pm2 stop all",
+    "stop:one": "pm2 stop",
+    "list": "pm2 list",
+    "logs": "pm2 logs",
+    "show": "pm2 show"
   },
   "repository": {
     "type": "git",

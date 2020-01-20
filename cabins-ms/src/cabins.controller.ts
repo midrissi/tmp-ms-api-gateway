@@ -13,6 +13,7 @@ export class CabinsCtrl {
 
   @MessagePattern('cabins:list')
   async list(data: ICabinQueryOpts): Promise<IPaginable<ICabine>> {
+    console.log('New request received at port %s', process.env.PORT);
     this.logger.log(`list call. ${JSON.stringify(data)}`);
 
     const skip = data.$skip || 0;

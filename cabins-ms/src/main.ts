@@ -4,24 +4,24 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.createMicroservice(AppModule, {
-    /* TCP configuration */
+    /* TCP configuration *
     transport: Transport.TCP,
     options: {
       host: 'localhost',
       port: process.env.PORT
         ? parseInt(process.env.PORT, 10)
         : 5000,
-    }
-    /**
+    },
+    /**/
 
     /* Redis configuration *
     transport: Transport.REDIS,
     options: {
-      url: 'redis://localhost:6379'
-    }
+      url: 'redis://localhost:6379',
+    },
     /**/
 
-    /* RMQ Configuration *
+    /* RMQ Configuration */
     transport: Transport.RMQ,
     options: {
       urls: ['amqp://localhost:5672'],
