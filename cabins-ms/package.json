@@ -28,7 +28,7 @@
     "amqp-connection-manager": "^3.1.0",
     "amqplib": "^0.5.5",
     "mongoose": "^5.7.14",
-    "redis": "^2.8.0",
+    "redis": "^3.1.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
     "rxjs": "^6.5.3"
