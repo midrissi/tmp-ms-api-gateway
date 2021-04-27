@@ -18,7 +18,7 @@
     "@nestjs/microservices": "^6.10.7",
     "amqp-connection-manager": "^3.1.0",
     "amqplib": "^0.5.5",
-    "redis": "^2.8.0",
+    "redis": "^3.1.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.3"
   }
